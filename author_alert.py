@@ -87,3 +87,4 @@ for author in authors.keys():
         send_email(subject, body)
 
 save_articles(authors)
+print(authors)
