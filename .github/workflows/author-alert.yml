@@ -31,10 +31,10 @@ jobs:
 
     - name: Commit and push updated authors_articles.json
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add authors_articles.json
-        git commit -m "Update authors_articles.json with new articles"
-        git push
+       git config --global user.name "GitHub Actions"
+       git config --global user.email "actions@github.com"
+       git add .
+       git commit -m "Update authors_articles.json with new articles"
+       git push https://${{ secrets.PAT }}@github.com/DiogoCosta99/FT-Author-Watch.git
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
