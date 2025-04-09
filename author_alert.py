@@ -50,6 +50,7 @@ def send_email(subject, body):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
+authors = load_articles()
 
 for author in authors.keys():
     url =  'https://www.ft.com/{}'.format(author)
