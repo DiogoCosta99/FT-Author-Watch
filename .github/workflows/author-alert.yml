@@ -3,6 +3,7 @@ name: Run Python Script
 on:
   schedule:
     - cron: '0 9 * * *'  # Run every day at 9 AM Lisbon time (UTC +1)
+  workflow_dispatch:  # Allows manual trigger of the workflow
 
 jobs:
   run-script:
