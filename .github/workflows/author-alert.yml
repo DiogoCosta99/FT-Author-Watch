@@ -32,9 +32,8 @@ jobs:
     
     - name: Commit and push updated authors_articles.json
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add .
-        git commit -m "Update authors_articles.json with new articles"
-        git remote set-url origin https://DiogoCosta99:${{ secrets.PAT }}@github.com/DiogoCosta99/FT-Author-Watch.git
-        git push origin main
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Update authors_articles.json with new articles"
+          git push https://${{ secrets.PAT }}@github.com/DiogoCosta99/FT-Author-Watch.git
