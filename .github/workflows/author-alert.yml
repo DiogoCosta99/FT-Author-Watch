@@ -36,6 +36,5 @@ jobs:
         git config --global user.email "actions@github.com"
         git add .
         git commit -m "Update authors_articles.json with new articles"
-        git remote set-url origin https://${{ secrets.PAT }}@github.com/DiogoCosta99/FT-Author-Watch.git
+        git remote set-url origin https://DiogoCosta99:${{ secrets.PAT }}@github.com/DiogoCosta99/FT-Author-Watch.git
         git push origin main
-   
