@@ -55,6 +55,7 @@ authors = load_articles()
 for author in authors.keys():
     url =  'https://www.ft.com/{}'.format(author)
     response = requests.get(url, headers=headers)
+    print(f"Fetching {url} returned status code {response.status_code}")
     print(response.text[:1000])  # print the first 1000 chars of the page
     soup = BeautifulSoup(response.content, 'html.parser')
 
