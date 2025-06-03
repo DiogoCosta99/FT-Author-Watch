@@ -9,15 +9,19 @@ import time
 
 # Set headers to mimic a real browser
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
-                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/114.0.0.0 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Connection': 'keep-alive'
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Referer': 'https://www.ft.com/',
+    'Connection': 'keep-alive',
 }
 
+# Create a session and set headers
+session = requests.Session()
+session.headers.update(headers)
+
+# Optional: get homepage to set cookies
+session.get('https://www.ft.com/')
 
 file_path = 'authors_articles.json'
 
