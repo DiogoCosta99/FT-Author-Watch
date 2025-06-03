@@ -74,17 +74,21 @@ for author in authors.keys():
 
         # Compare with previously stored title/link
         # If new, store it and notify
-    if title in authors[author]:
-        print("No new article.")
+        if title in authors[author]:
+            print("No new article.")
+        else:
+            #article_list.clear()
+            #article_list.append(title)
+            print(f"New article added to the list: {title} instead of {authors[author]}")
+            authors.update({author:title})
+            
+            subject = f"New article by {author.replace('-',' ').title()}"
+            body = f"{author.replace('-',' ').title()} has published a new article: {title}\nCheck it out here: ft.com{link}"
+            send_email(subject, body)
     else:
-        #article_list.clear()
-        #article_list.append(title)
-        print(f"New article added to the list: {title} instead of {authors[author]}")
-        authors.update({author:title})
-        
-        subject = f"New article by {author.replace('-',' ').title()}"
-        body = f"{author.replace('-',' ').title()} has published a new article: {title}\nCheck it out here: ft.com{link}"
-        send_email(subject, body)
+        print(f"No articles found for author: {author}")
 
+
+    
 save_articles(authors)
 print(authors)
